@@ -6,41 +6,32 @@ const AllMeetups = () => {
   const [meetups, setMeetups] = useState([])
 
   useEffect(() => {
-    console.log('useEffect #1')
     fetch(
       'https://academind-react-course-default-rtdb.asia-southeast1.firebasedatabase.app/meetups.json'
     )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log('useEffect #3')
-
+      .then(res => res.json())
+      .then(data => {
         const _meetups = []
 
-        Object.keys(data).forEach((key) =>
+        Object.keys(data).forEach(key =>
           _meetups.push({
             id: key,
-            ...data[key],
+            ...data[key]
           })
         )
 
         setIsLoading(false)
         setMeetups(_meetups)
       })
-
-    console.log('useEffect #2')
   }, [])
 
   if (isLoading) {
-    console.log('isLoading #1')
-
     return (
       <section>
         <p>Loading...</p>
       </section>
     )
   }
-
-  console.log('normally #1')
 
   return (
     <section>

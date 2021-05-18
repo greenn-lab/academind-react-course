@@ -3,12 +3,8 @@ import MeetupItem from './MeetupItem'
 
 const MeetupList = ({ meetups }) => (
   <ul className={css.list}>
-    {meetups.map((meetup) => (
-      <MeetupItem
-        key={meetup.id}
-        id={meetup.id}
-        image={meetup.image}
-      />
+    {meetups.map(meetup => (
+      <MeetupItem key={meetup.id} {...meetup} />
     ))}
   </ul>
 )

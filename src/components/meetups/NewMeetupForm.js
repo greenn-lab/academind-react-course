@@ -21,7 +21,7 @@ const NewMeetupForm = ({ onAddMeetup }) => {
       title: enteredTitle,
       image: enteredImage,
       address: enteredAddress,
-      description: enteredDescription,
+      description: enteredDescription
     }
 
     onAddMeetup(meetupData)
